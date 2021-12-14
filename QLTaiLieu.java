@@ -72,12 +72,21 @@ public class QLTaiLieu extends TaiLieu{
         }while(key.equalsIgnoreCase("s")==false);
     }
     
-    public void xuatDS() {
+       public void xuatDS() {
         System.out.println("==========DANH SÁCH TÀI LIỆU=========");
-        for(int i=0;i<ds.size();i++)
-        {
-            
-            
+        for (int i = 0; i < ds.size(); i++) {
+            TaiLieu taiLieu = ds.get(i);
+            if (taiLieu instanceof Sach) {
+                System.out.println("--- Sách ---");
+            } else if (taiLieu instanceof TapChi) {
+                System.out.println("--- Tạp chí ---");
+            } else if (taiLieu instanceof Bao) {
+                System.out.println("--- Báo ---");
+            }
+            ds.get(i).xuat();
+            System.out.println();
+            System.out.println();
         }
+    }
     }
 }
